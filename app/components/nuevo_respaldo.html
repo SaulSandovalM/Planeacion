@@ -1,0 +1,210 @@
+
+
+<section class="mainContainer container">
+
+<div style="display:none;text-align:center" id="load">
+	<img src="http://www.chefdtv.com/wp-content/themes/culinier-theme/images/loader.gif">
+</div>
+
+<div ng-show="$ctrl.err()" class="alert alert-success" role="alert">{{$ctrl.success}}</div>
+
+<!-- <form ng-submit="$ctrl.add()" class="container"> -->
+<div class='row'>	
+<!-- <div class="col-md-2"> -->
+<!--<span>Secretaría</span></div>
+<div class="col-md-10">
+	<select required class="form-control" ng-model="$ctrl.secretaria">
+		<option value="{{$ctrl.laSecretaria[0].}}">
+			{{$ctrl.laSecretaria[0].secretaria}}
+		</option>
+		<option value="">Selecciona una opción</option>
+  		<option value="Secretaría de Desarrollo Agropecuario">Secretaría de Desarrollo Agropecuario</option>
+  		<option value="Secretaría de Contraloría y Transparencia Gubernamental">Secretaría de Contraloría y Transparencia Gubernamental</option>
+  		<option value="Secretaría de Desarrollo Económico">Secretaría de Desarrollo Económico</option>
+  		<option value="Secretaria de Desarrollo Social">Secretaria de Desarrollo Social</option>
+  		<option value="Secretaría de Finanzas y Administración">Secretaría de Finanzas y Administración</option>
+  		<option value="Secretaría de Educación Pública">Secretaría de Educación Pública</option>
+  		<option value="Secretaría de Gobierno">Secretaría de Gobierno</option>
+  		<option value="Secretaría del Trabajo y Previsión Social">Secretaría del Trabajo y Previsión Social</option>
+  		<option value="Secretaría del Medio Ambiente y Recursos Naturales">Secretaría del Medio Ambiente y Recursos Naturales</option>
+  		<option value="Secretaría de Obras Públicas y Ordenamiento Territorial">Secretaría de Obras Públicas y Ordenamiento Territorial</option>
+  		<option value="Secretaría de Planeación, Desarrollo Regional y Metropolitano">Secretaría de Planeación, Desarrollo Regional y Metropolitano</option>
+  		<option value="Secretaría de Salud">Secretaría de Salud</option>
+  		<option value="Secretaría de Seguridad Pública">Secretaría de Seguridad Pública</option>
+  		<option value="Secretaría de Turismo y Cultura">Secretaría de Turismo y Cultura</option> 
+	</select>
+</div> -->
+<!--column 10-->
+<br>
+<br>
+
+<article id="primero"><!--Primero-->
+	<form name="first">
+<div  class="col-md-2">
+<span>Eje</span></div>
+<div class="col-md-10">
+	<select id="eje" ng-change="$ctrl.setObjetivos()"  required class="form-control" ng-model="$ctrl.eje">
+		<option value="">Selecciona una opción</option>
+  		<option value="Gobierno Honesto, Cercano y Moderno">1. Gobierno Honesto, Cercano y Moderno</option>
+  		<option value="Hidalgo Próspero y Dinámico">2. Hidalgo Próspero y Dinámico</option>
+  		<option value="Hidalgo Humano e Igualitario">3. Hidalgo Humano e Igualitario</option>
+  		<option value="Un Hidalgo Seguro con Justicia y en Paz">4. Un Hidalgo Seguro con Justicia y en Paz</option>
+  		<option value="Un Hidalgo con Desarrollo Sustentable">5. Un Hidalgo con Desarrollo Sustentable</option>
+	</select>
+</div>
+<br>
+<br>
+
+	<div class="col-md-2">
+		<span>Objetivos estratégicos</span>
+	</div>
+	<div class="col-md-10">
+		<select required class="form-control" ng-model="$ctrl.obest">
+		<option value="">Selecciona una opción</option>
+  		<option ng-repeat="oe in $ctrl.obes" value="{{oe}}">{{oe}}</option>
+	</select>
+	</div>
+
+<form>
+
+	<button style="float:right;margin:20px" class="btn btn-warning" ng-click="first.$valid && $ctrl.continuar('#primero','#segundo')" ng-show="first.$valid">
+		Continuar
+	</button> <!--Continuar-->
+
+</article> <!--Primero-->
+
+
+
+
+
+
+<!-- <article id="segundo" class=""><!--segundo--> -->
+
+<form id="second" name="second">
+	<input type="text" required>
+	<input type="submit">
+<form>
+
+
+
+	<h1 ng-show="second.$valid">Perro</h1>
+
+<!-- </article> <!--segundo-->
+
+
+
+
+<article id="tercero" class="oculto">
+
+<div class="col-md-2">
+<span>Indicador Estratégico</span></div>
+<div class="col-md-10">
+	<select required class="form-control" ng-model="$ctrl.indicador_estrategico">
+		<option value="">Selecciona una opción</option>
+  		<option class="1" value='Tasa de Prevalencia de Corrupción (INEGI)'>Tasa de Prevalencia de Corrupción (INEGI)</option>
+  		<option class="1" value='Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)'>Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)</option>
+  		<option class="1" value='Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)'>Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)</option>
+  		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población en condición de pobreza</option>
+  		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por acceso a los servicios de salud</option>
+  		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por rezago educativo</option>
+  		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por calidad y espacios de la vivienda</option>
+		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)</option>
+		<option class="2" value='Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria'>Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria</option>
+		<option class="2" value='Tasa de informalidad laboral'>Tasa de informalidad laboral</option>
+		<option class="2" value='Tasa de personas de 18 años y más que considera inseguro su municipio '>Tasa de personas de 18 años y más que considera inseguro su municipio </option>
+		<option class="2" value='Tasa de prevalencia delictiva'>Tasa de prevalencia delictiva</option>
+		<option class="2" value='Tasa de crecimiento anual del PIB per cápita (INEGI)'>Tasa de crecimiento anual del PIB per cápita (INEGI)</option>
+		<option class="2" value='Porcentaje de hogares con conectividad a internet (INEGI)'>Porcentaje de hogares con conectividad a internet (INEGI)</option>
+  		<option class="2" value='Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)'>Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)</option>
+  		<option class="2" value='Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)'>Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)</option>
+  		<option class="5" value='Volumen tratado de aguas residuales'>Volumen tratado de aguas residuales</option>
+  		<option class="5" value='Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)'>Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)</option>
+  		<option class="5" value='Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)'>* Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)</option>
+	</select>
+	<br>
+
+	</div>	
+
+
+	<div class="col-md-2">
+		<span>Programas Asociados</span></div>
+		<div class="col-md-10">
+		<textarea required class="form-control" ng-model="$ctrl.programas_asociados"></textarea>
+	</div>
+		<br>
+		<br>
+		<br>
+	<div class="col-md-2">
+		<span>Indicador(es) de Gestión</span></div>
+		<div class="col-md-10">
+		<textarea required class="form-control" ng-model="$ctrl.indicadores_de_gestion"></textarea></div>
+		<br>
+		<br>
+		<br>
+	
+<!-- 	<div class="col-md-2">
+		<span>Creado por: </span></div>
+		<div class="col-md-10">
+		<input disabled class="form-control" value="{{$ctrl.userEmail}}" ng-model="$ctrl.userEmail">
+	</div> -->
+	<br>
+	<br>
+	<div class="col-md-2">
+		<span>Fecha:</span></div>
+		<div class="col-md-10">
+		<input disabled class="form-control" placeholder="{{$ctrl.fecha | date :  'dd/MM/y hh:mm'}}" value="">
+	</div>
+	
+	</div>
+
+<div style='text-align:center;'>
+<br>
+
+
+
+<input ng-hide="$ctrl.err()" class="btn btn-primary oculto" type="submit" style='bmargin:0 auto'>
+	</div>
+	
+
+</article> <!--tercero-->
+
+
+<!-- </form> -->
+
+</section>
+<!-- <section style="text-align:center" class="container">
+
+	<div ng-hide="$ctrl.userLoggedIn()" class="alert alert-warning" role="alert">
+		Porfavor inicia sesión <a href="#/login" class="btn btn-primary">aquí</a>
+	</div>
+
+	
+
+</section> -->
+
+    <script type="text/javascript">
+        // JavaScript
+        
+        window.sr = ScrollReveal()
+        .reveal('.mainContainer',
+        	{ 	
+        		origin   : "top",
+        		duration: 1500,
+        		distance : "24px",
+        		scale    : 1.05
+        	});
+  
+
+        
+        // sr.reveal('.bar');
+    </script>
+
+<script>
+	//la animacion de las secciones
+	
+
+
+
+
+</script>
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="palneacionHidalgo">
+
+<head>
+	<title>PlaneacionHgo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- font awezome    -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+
+	<link rel="stylesheet" type="text/css" href="assets/css/estilos.css">
+</head>
+
+<body ng-controller="indexCtrl as ic">
+
+
+
+
+
+	<section class="container">
+
+
+		<div class="page-header centrado">
+		  <img style="width:100px;" src="assets/images/logo.png"><h3 class="">Secretaria de Planeación Desarrollo Regional y Metropolitano</h3>
+
+<!-- Login -->
+
+          <button ng-show="ic.checkLogin()" ng-click="ic.logOut()" style="float:right" class="btn btn-primary">
+            Cerrar Sesión
+        </button>
+        <br>
+        <br>
+        <br>
+        <h6 ng-show="ic.checkLogin()" style="float:right">{{ic.email}}</h6>
+
+        <a href="#/login" ng-hide="ic.checkLogin()" style="float:right" class="btn btn-primary">
+            Iniciar Sesión
+        </a>
+ <!-- Login -->
+
+
+		  <p style="text-align:center">Sistema centralizado de proyectos </p>
+
+                <a href="#/info" class="btn btn-default navbar-btn">Revisar</a>
+                <!-- <a href="#/login" class="btn btn-default navbar-btn">Login</a> -->
+                <a href="#/nuevo" class="btn btn-default navbar-btn">Subir proyecto</a>
+                <!-- <a href="#/registro" class="btn btn-default navbar-btn">Registro</a> -->
+
+		</div>
+
+	</section>
+    
+
+    <main class="Maincontainer" ng-view>
+
+    </main>
+
+
+
+
+
+<!-- jquey -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <!-- Angular routes -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCQWgp2tvE2Phv_A5Yq9RzvyMf0GDTfuBs",
+            authDomain: "planeacion-hidalgo.firebaseapp.com",
+            databaseURL: "https://planeacion-hidalgo.firebaseio.com",
+            storageBucket: "planeacion-hidalgo.appspot.com",
+            messagingSenderId: "679579674763"
+        };
+        firebase.initializeApp(config);
+        </script>
+
+<!-- Vendor tools -->
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+
+
+
+
+
+    <!-- Angular Module -->
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/components/login_component.js"></script>
+    <script src="app/components/info_component.js"></script>
+    <script src="app/components/nuevo_component.js"></script>
+    <script src="app/components/registro_component.js"></script>
+    <script src="app/components/detalle_component.js"></script>
+    <script src="app/components/checador.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--Tooltip-->
+    <script>
+        $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

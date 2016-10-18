@@ -1,0 +1,245 @@
+<article class="container">
+
+<section id="primera" class="espacio animated rubberBand">
+<form class="row" ng-submit="$ctrl.continuar('#primera','#segunda')">
+
+<div ng-show="$ctrl.showSecretaria" class="info well row">
+
+	<div class="col-md-2">Secretaría</div>
+	<div class="col-md-10">
+
+		<select class="form-control" ng-model="$ctrl.s">
+		<option value="">Selecciona una Secretaría</option>
+  		<option value="Secretaría de Desarrollo Agropecuario">Secretaría de Desarrollo Agropecuario</option>
+  		<option value="Secretaría de Contraloría y Transparencia Gubernamental">Secretaría de Contraloría y Transparencia Gubernamental</option>
+  		<option value="Secretaría de Desarrollo Económico">Secretaría de Desarrollo Económico</option>
+  		<option value="Secretaria de Desarrollo Social">Secretaria de Desarrollo Social</option>
+  		<option value="Secretaría de Finanzas y Administración">Secretaría de Finanzas y Administración</option>
+  		<option value="Secretaría de Educación Pública">Secretaría de Educación Pública</option>
+  		<option value="Secretaría de Gobierno">Secretaría de Gobierno</option>
+  		<option value="Secretaría del Trabajo y Previsión Social">Secretaría del Trabajo y Previsión Social</option>
+  		<option value="Secretaría del Medio Ambiente y Recursos Naturales">Secretaría del Medio Ambiente y Recursos Naturales</option>
+  		<option value="Secretaría de Obras Públicas y Ordenamiento Territorial">Secretaría de Obras Públicas y Ordenamiento Territorial</option>
+  		<option value="Secretaría de Planeación, Desarrollo Regional y Metropolitano">Secretaría de Planeación, Desarrollo Regional y Metropolitano</option>
+  		<option value="Secretaría de Salud">Secretaría de Salud</option>
+  		<option value="Secretaría de Seguridad Pública">Secretaría de Seguridad Pública</option>
+  		<option value="Secretaría de Turismo y Cultura">Secretaría de Turismo y Cultura</option> 
+	</select>
+
+	</div>
+
+</div>
+
+
+	
+<div class="info well row">
+
+	<div class="col-md-2">Eje</div>
+	<div ng-hide="$ctrl.propuesta.newEje" class="col-md-10 animated rubberBand">
+		<select id="eje" ng-change="$ctrl.setObjetivos()"  required class="form-control" ng-model="$ctrl.propuesta.eje">
+		<option value="">Selecciona una opción</option>
+  		<option value="Gobierno Honesto, Cercano y Moderno">1. Gobierno Honesto, Cercano y Moderno</option>
+  		<option value="Hidalgo Próspero y Dinámico">2. Hidalgo Próspero y Dinámico</option>
+  		<option value="Hidalgo Humano e Igualitario">3. Hidalgo Humano e Igualitario</option>
+  		<option value="Un Hidalgo Seguro con Justicia y en Paz">4. Un Hidalgo Seguro con Justicia y en Paz</option>
+  		<option value="Un Hidalgo con Desarrollo Sustentable">5. Un Hidalgo con Desarrollo Sustentable</option>
+		</select>
+	</div>
+	<div ng-show="$ctrl.propuesta.newEje" class="col-md-10 animated rubberBand">
+		<input required class="form-control" type="text" ng-model="$ctrl.propuesta.eje">
+	</div>
+
+</div>
+
+
+
+
+
+
+<div class="info well row">
+
+	<div class="col-md-2">Objetivos estratégicos</div>
+	<div class="col-md-10 animated rubberBand" ng-hide="$ctrl.propuesta.newEje">
+		<select required class="form-control col-md-6" ng-model="$ctrl.propuesta.objetivo_estrategico">
+		<option value="">Selecciona una opción</option>
+  		<option ng-repeat="oe in $ctrl.obes" value="{{oe}}">{{oe}}</option>
+		</select>
+	</div>
+
+
+	<div ng-show="$ctrl.propuesta.newEje" class="col-md-10 animated rubberBand">
+		<input required class="form-control" type="text" ng-model="$ctrl.propuesta.objetivo_estrategico">
+	</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="col-md-2">
+	<div ng-hide="$ctrl.propuesta.newEje" ng-click="$ctrl.propuesta.newEje = true" class="btn btn-danger btn-lg">
+		Agregar un nuevo eje
+	</div>
+	<div ng-show="$ctrl.propuesta.newEje" ng-click="$ctrl.propuesta.newEje = false" class="btn btn-default">
+		Volver a las opciones
+	</div>
+</div>
+
+<div class="col-md-4 col-md-offset-6">
+<input value="Continuar" class="btn btn-lg btn-warning" type="submit">
+</div>
+
+</form>
+</section>
+
+<!-- segunda seccion -->
+
+<section class="oculto" id="segunda">
+<form ng-submit="$ctrl.continuar('#segunda','#tercera')">
+
+<div class="info well row">
+	<div class="col-md-2">Indicador Estratégico</div>
+	<div class="col-md-10">
+		<select required class="form-control" ng-model="$ctrl.propuesta.indicador_estrategico">
+		<option value="">Selecciona una opción</option>
+  		<option class="1" value='Tasa de Prevalencia de Corrupción (INEGI)'>Tasa de Prevalencia de Corrupción (INEGI)</option>
+  		<option class="1" value='Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)'>Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)</option>
+  		<option class="1" value='Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)'>Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)</option>
+  		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población en condición de pobreza</option>
+  		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por acceso a los servicios de salud</option>
+  		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por rezago educativo</option>
+  		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por calidad y espacios de la vivienda</option>
+		<option class="2" value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)</option>
+		<option class="2" value='Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria'>Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria</option>
+		<option class="2" value='Tasa de informalidad laboral'>Tasa de informalidad laboral</option>
+		<option class="2" value='Tasa de personas de 18 años y más que considera inseguro su municipio '>Tasa de personas de 18 años y más que considera inseguro su municipio </option>
+		<option class="2" value='Tasa de prevalencia delictiva'>Tasa de prevalencia delictiva</option>
+		<option class="2" value='Tasa de crecimiento anual del PIB per cápita (INEGI)'>Tasa de crecimiento anual del PIB per cápita (INEGI)</option>
+		<option class="2" value='Porcentaje de hogares con conectividad a internet (INEGI)'>Porcentaje de hogares con conectividad a internet (INEGI)</option>
+  		<option class="2" value='Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)'>Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)</option>
+  		<option class="2" value='Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)'>Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)</option>
+  		<option class="5" value='Volumen tratado de aguas residuales'>Volumen tratado de aguas residuales</option>
+  		<option class="5" value='Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)'>Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)</option>
+  		<option class="5" value='Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)'>* Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)</option>
+	</select>
+	</div>
+</div>
+
+
+<div class="info well row">
+	<div class="col-md-2">Objetivo General</div>
+	<div class="col-md-10">
+		<textarea ng-model="$ctrl.propuesta.objetivo_general" required class="form-control" style="width:100%;height:100px;"></textarea>
+	</div>
+</div>
+<div class="info well row">
+	<div class="col-md-2">
+		Lineas de Acción
+		<div class="btn btn-lg btn-success" ng-click="$ctrl.addLinea()">
+			<i class="fa fa-plus" aria-hidden="true"></i>
+			Agregar Linea
+		</div>
+	</div>
+	<div class="col-md-10 row">
+		
+
+
+		<div ng-repeat="linea in $ctrl.lineasAccion" class="col-md-6">
+			<span>Linea de acción {{$index+1}}</span>
+			<textarea ng-model="linea.texto" class="form-control" style="width:100%;height:50px;"></textarea>
+			<div ng-show="$last" ng-click="$ctrl.removeLinea()" class="btn btn-lg btn-danger"><i class="fa fa-times" aria-hidden="true"></i>
+				Quitar
+			</div>
+		</div>
+
+		
+	</div>
+			
+</div>
+
+
+
+	<div class="col-md-4">
+		<div ng-click="$ctrl.volver('#segunda','#primera')" class="btn btn-lg btn-danger">Volver Atraz</div>
+	</div>
+
+	<div class="col-md-4 col-md-offset-4">
+		<input value="Continuar" class="btn btn-lg btn-warning" type="submit">
+	</div>
+
+</form>
+</section>
+
+<!-- Tercera seccion -->
+
+<section class="oculto" id="tercera">
+<form ng-submit="$ctrl.continuar('#tercera','#cuarta')">
+
+
+<div class="info well row">
+	<div class="col-md-2">Programas Asociados</div>
+	<div class="col-md-10">
+		<textarea ng-model="$ctrl.propuesta.programas_asociados" required class="form-control" style="width:100%;height:100px;"></textarea>
+	</div>
+</div>
+
+<div class="info well row">
+	<div class="col-md-2">Indicador(es) de Gestión</div>
+	<div class="col-md-10">
+		<textarea ng-model="$ctrl.propuesta.indicadores_de_gestion" required class="form-control" style="width:100%;height:100px;"></textarea>
+	</div>
+</div>
+
+
+	<div class="col-md-4">
+		<div ng-click="$ctrl.volver('#tercera','#segunda')" class="btn btn-lg btn-danger">Volver Atraz</div>
+	</div>
+
+	<div class="col-md-4 col-md-offset-4">
+	<input value="Continuar" class="btn btn-lg btn-warning" type="submit">
+	</div>
+
+
+</form>
+</section>
+
+<!-- cuarta seccion -->
+
+<section ng-hide="$ctrl.mensaje.success" style="text-align:center" class="oculto" id="cuarta">
+<form class="row" ng-submit="$ctrl.addPropuesta()">
+
+<h2>¡Felicidades haz completado un proyecto!</h2>
+
+<div class="col-md-6">
+<h4>¿Todo está bien?, puedes volver para revisar:</h4>
+<div ng-click="$ctrl.volver('#cuarta','#tercera')" class="btn btn-lg btn-danger">Volver Atraz</div>
+</div>
+
+<div class="col-md-6">
+<h4>Si todo esta correcto puedes subir tu proyecto:</h4>
+<input id="loader_a" class="btn btn-lg btn-success" value="Subir" type="submit">
+<img class="oculto" id="loader_b" src="http://www.chefdtv.com/wp-content/themes/culinier-theme/images/loader.gif">
+</div>
+
+
+</form>
+</section>
+
+
+<section style="text-align:center" id="Mensajes">
+
+	<div ng-show="$ctrl.mensaje.success" class="alert alert-success" role="alert">{{$ctrl.mensaje.msj}}</div>
+	<a margin ng-show="$ctrl.mensaje.success" class="btn btn-lg btn-info" href="#/nuevo">Subir otro proyecto</a>
+	<div ng-show="$ctrl.mensaje.error" class="alert alert-danger" role="alert">{{$ctrl.mensaje.msj}}</div>
+
+
+</section>
+
+
+</article>

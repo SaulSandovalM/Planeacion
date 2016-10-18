@@ -1,0 +1,52 @@
+
+<section ng-controller="checkController as elCheck" class="container">
+    
+
+    <div class="panel panel-default">
+  <div class="panel-body">
+
+
+
+    <h3>Propuestas</h3>
+   <article class="row">	
+    <div class="input-group input-group-lg col-md-4">
+	  <span class="input-group-addon" id="sizing-addon1">
+	  	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+	  </span>
+	  <input ng-model="searchField" type="text" class="form-control" placeholder="Buscar" aria-describedby="sizing-addon1">
+	</div>
+</article>
+
+
+
+  </div>
+</div>
+
+
+
+
+    <div class="list-group row">
+        <div href="#" class="list-group-item col-md-6" ng-repeat="propuesta in $ctrl.propuestas | filter:searchField">
+            <h4 class="list-group-item-heading">{{propuesta.secretaria}}</h4>
+            <p class="list-group-item-text">
+                <ul class="list-group">
+                    <li class="list-group-item">{{propuesta.eje}}</li>
+                    <li class="list-group-item">{{propuesta.indicador_estrategico}}</li>
+                </ul>
+                <a href="#/propuesta/{{propuesta.$id}}">Detalle</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="container">
+    <div style="text-align:center;" ng-hide="$ctrl.checkLogin()" class="alert alert-warning" role="alert">
+        Porfavor inicia sesión <a href="#/login" class="btn btn-primary">aquí</a>
+    </div>
+</section> -->
+<!--
+<h1>Experimento:</h1>
+ <div ng-controller="checkController as elCheck">
+<h2 ng-show="elCheck.checkEstado()">Funcionó</h2>
+<h2 ng-hide="elCheck.checkEstado()">No Funcionó, {{elCheck.estado}}</h2>
+</div> -->

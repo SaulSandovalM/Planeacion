@@ -1,0 +1,41 @@
+<section class="container centrado">
+
+<div ng-show="$ctrl.err()" class="alert alert-danger" role="alert">{{$ctrl.erro}}</div>
+
+<article ng-hide="$ctrl.checkLogin()" class="row">
+<form id="formulario1">
+	<div class="input-group col-sm-4 col-sm-offset-4">
+	  <span class="input-group-addon" id="basic-addon1">Email</span>
+	  <input ng-model="$ctrl.email" type="email" class="form-control" placeholder="Correo Electrónico" aria-describedby="basic-addon1">
+	</div>
+	<br>
+	<div class="input-group col-sm-4 col-sm-offset-4">
+	  <span class="input-group-addon" id="basic-addon1">Password</span>
+	  <input ng-model="$ctrl.password" type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1">
+	</div>
+	<br>
+	<input type="submit" ng-click="$ctrl.logg()" class="btn btn-primary" value="Ingresar">
+	<p>¿No tienes una cuenta?, registrate <a href="/#/registro">aqui</a></p>
+
+</form>
+
+
+
+</article>
+
+<div style="display:none;" id="load">
+	<img src="http://www.chefdtv.com/wp-content/themes/culinier-theme/images/loader.gif">
+</div>
+
+<article ng-show="$ctrl.checkLogin()" class="row">
+	<h2>Hola {{$ctrl.email}}</h2>
+	<button ng-click="$ctrl.logOut()" class="btn btn-primary ">Cerrar Sesión</button>
+
+</article>
+</section>
+
+<script>
+	  $("#formulario1").submit(function() {		
+        console.log('submit');		
+    });
+</script>

@@ -1,0 +1,40 @@
+<section class="container centrado">
+
+<article ng-hide="$ctrl.checkLogin()" class="row">
+	<h3>Crea tu cuenta de acceso</h3><br>
+<form id="formulario1">
+	<div class="input-group col-sm-4 col-sm-offset-4">
+	  <span class="input-group-addon" id="basic-addon1">Email</span>
+	  <input ng-model="$ctrl.email" type="email" class="form-control" placeholder="Correo Electrónico" aria-describedby="basic-addon1">
+	</div>
+	<br>
+	<div class="input-group col-sm-4 col-sm-offset-4">
+	  <span class="input-group-addon" id="basic-addon1">Password</span>
+	  <input ng-model="$ctrl.password" type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1">
+	</div>
+	<br>
+	<input type="submit" ng-click="$ctrl.crearUsuario()" class="btn btn-primary" value="Crear Cuenta">
+
+
+</form>
+
+
+
+</article>
+
+<div style="display:none;" id="load">
+	<img src="http://www.chefdtv.com/wp-content/themes/culinier-theme/images/loader.gif">
+</div>
+
+<article ng-show="$ctrl.checkLogin()" class="row">
+	<h2>Hola {{$ctrl.email}}</h2>
+	<a href="#/info" class="btn btn-primary ">Subir Proyecto</a>
+
+</article>
+</section>
+
+<script>
+	  $("#formulario1").submit(function() {		
+        console.log('submit');		
+    });
+</script>
